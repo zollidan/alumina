@@ -12,5 +12,5 @@ class CoatingAPIView(generics.ListAPIView):
    serializer_class = CoatingSerializer
     
 
-def hello(request):
-    return HttpResponse("LeFort Tech Inc. under reconstruction")
+def apiVersion(request):
+    return HttpResponse("LeFort Tech Inc. v1.0")
