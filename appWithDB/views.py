@@ -10,6 +10,22 @@ class CatAPIView(generics.ListAPIView):
 class CoatingAPIView(generics.ListAPIView):
    queryset = coatings.objects.all()
    serializer_class = CoatingSerializer
+
+class OrdersAPIView(generics.ListAPIView):
+   queryset = orders.objects.all()
+   serializer_class = OrdersSerializer
+
+class PanelSizeAPIView(generics.ListAPIView):
+   queryset = panel_size.objects.all()
+   serializer_class = PanelSizeSerializer
+
+class PanelThicknessAPIView(generics.ListAPIView):
+   queryset = panel_thickness.objects.all()
+   serializer_class = PanelThicknessSerializer
+
+class LayerThicknessAPIView(generics.ListAPIView):
+   queryset = layer_thickness.objects.all()
+   serializer_class = LayerThicknessSerializer
     
 
 def apiVersion(request):
