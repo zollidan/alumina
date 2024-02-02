@@ -1,1 +1,10 @@
 /api/version - проверка версии api
+
+/admin - админ панель встроенная
+
+/api/categories - категории
+/api/coatings - покрытия
+/api/orders - заказы
+/api/panelsize - размер панели
+/api/panelthickness - толщина панели
+/api/layerthickness - толщина слоя

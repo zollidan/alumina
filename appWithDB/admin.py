@@ -9,5 +9,5 @@ admin.site.register(panel_thickness)
 admin.site.register(panel_size)
 admin.site.register(orders)
 
-admin.site.site_header = 'LeFort Designs and Tech Inc.'
+admin.site.site_header = 'LeFort Designs and Tech Inc. '
 
