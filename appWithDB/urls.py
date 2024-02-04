@@ -9,4 +9,5 @@ appwithdb_patterns = [
     path("panelsize", views.PanelSizeAPIView.as_view()),
     path("panelthickness", views.PanelThicknessAPIView.as_view()),
     path("layerthickness", views.LayerThicknessAPIView.as_view()),
+    
 ]
