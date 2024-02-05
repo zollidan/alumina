@@ -11,3 +11,29 @@
 
 на эти адреса также работает пост запрос, 
 в v0.2 он никак не запаролен на него с телом можно добавить новые данные в каждую таблицу
+
+POST api/token/ - на этот адрес отправляешь json с username and password 
+
+{
+    "username": "stepan", 
+    "password": "1234"
+}
+
+тебе обратно летит json с двумя токенами,
+
+{
+    "refresh": "eyJhbGciOis6maA3b4jcsf327Z_Q",
+    "access": "eyJhbGciOiJIUzI1X5FEHloZzsIJM"
+}
+
+вот так как то 
+
+в версии 0.3 дается на 5 минут ацесс токен 
+рефреш на 24 часа 
+
+дальше делаешь запросы ко всему сайту с access токен в header 
+"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVC"
+ 
+POST api/token/refresh/ - сюда запрашиваешься с рефреш токеном и тебе новый access 
+
+api/token/verify/ - пока не знаю то что я тестил возвращает код 200 после запроса на верефикацию

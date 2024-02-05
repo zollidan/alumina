@@ -1,9 +1,9 @@
-from django.shortcuts import HttpResponse
 from django.http import JsonResponse
 from .models import *
 from rest_framework import generics
 from rest_framework.response import Response
 from .serializer import *
+from django.core.mail import send_mail
 
 class CatAPIView(generics.ListAPIView):
    queryset = categories.objects.all()
@@ -54,6 +54,20 @@ class LayerThicknessAPIView(generics.ListAPIView):
       if newLayerThickness.is_valid():
          newLayerThickness.save()
       return Response(status=201)
+
+class CreateOrderAPIView(generics.ListAPIView):
+
+
+   def post(self, request):
+      newOrder = OrdersSerializer(data=request.data)
+      if newOrder.is_valid():
+         newOrder.save()
+         # send_mail(subject="заказ",
+         #       message="ну тупо тело сообщения",
+         #       from_email="zollidan@yandex.ru",
+         #       recipient_list=["zollidan@yandex.ru"])
+      return Response(status=201)
+
     
 
 
